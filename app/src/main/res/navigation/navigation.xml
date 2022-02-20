@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/navigation"
+            app:startDestination="@id/splashFragment">
+
+    <fragment android:id="@+id/splashFragment"
+              android:name="com.example.weatherapp.SplashFragment"
+              android:label="splash"
+              tools:layout="@layout/fragment_splash">
+        <action android:id="@+id/action_splashFragment_to_signInFragment"
+                app:destination="@id/signInFragment"
+                app:launchSingleTop="true"
+                app:popUpTo="@id/splashFragment"
+                app:popUpToInclusive="true" />
+        <action
+                android:id="@+id/action_splashFragment_to_userListFragment2"
+                app:destination="@id/userListFragment2"/>
+    </fragment>
+    <fragment android:id="@+id/signInFragment"
+              android:name="com.example.weatherapp.SignInFragment"
+              android:label="signin"
+              tools:layout="@layout/fragment_sign_in">
+        <action android:id="@+id/action_signInFragment_to_userListFragment2"
+                app:destination="@id/userListFragment2"/>
+    </fragment>
+    <fragment android:id="@+id/userListFragment2"
+              android:name="com.example.weatherapp.UserListFragment"
+              android:label="userlist"
+
+              tools:layout="@layout/fragment_user_list">
+        <action
+                android:id="@+id/action_userListFragment2_to_userFormFragment"
+                app:destination="@id/userFormFragment"/>
+        <action
+                android:id="@+id/action_userListFragment2_to_weatherFragment"
+                app:destination="@id/weatherFragment"/>
+    </fragment>
+    <fragment
+            android:id="@+id/userFormFragment"
+            android:name="com.example.weatherapp.UserFormFragment"
+            android:label="userform"
+            tools:layout="@layout/fragment_user_form">
+        <action
+                android:id="@+id/action_userFormFragment_to_userListFragment2"
+                app:destination="@id/userListFragment2"
+                app:popUpTo="@id/userListFragment2"
+                app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+            android:id="@+id/weatherFragment"
+            android:name="com.example.weatherapp.WeatherFragment"
+            android:label="weather"
+            tools:layout="@layout/fragment_weather">
+        <action
+                android:id="@+id/action_weatherFragment_to_signInFragment"
+                app:destination="@id/signInFragment"
+                app:popUpToInclusive="true"/>
+    </fragment>
+</navigation>
