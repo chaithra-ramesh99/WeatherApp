@@ -10,7 +10,8 @@ import kotlinx.coroutines.flow.map
 
 class UserManager(context: Context) {
 
-    private val dataStore = context.createDataStore(name = "user_prefs")
+
+     var dataStore = context.createDataStore(name = "user_prefs")
 
     companion object {
         val USER_NAME_KEY = preferencesKey<String>("USER_NAME")

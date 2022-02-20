@@ -25,14 +25,14 @@
             android:id="@+id/edlname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter name"
+            android:hint="Enter last name"
             android:textSize="20sp"/>
 
     <EditText
             android:id="@+id/edemail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter name"
+            android:hint="Enter email"
             android:textSize="20sp"/>
 
     <ImageView

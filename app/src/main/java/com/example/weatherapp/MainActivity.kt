@@ -21,7 +21,8 @@ class MainActivity : AppCompatActivity() {
 
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.userListFragment2
+                R.id.userListFragment2,R.id.signInFragment,R.id.splashFragment
+
             )
         )
 
@@ -29,13 +30,7 @@ class MainActivity : AppCompatActivity() {
       //  NavigationUI.setupActionBarWithNavController(this,nav_host_fragment)
 
     }
-  /*  override fun onSupportNavigateUp(): Boolean {
-        //
-        if (!(nav_host_fragment.navigateUp() || super.onSupportNavigateUp())) {
-            onBackPressed()
-        }
-        return true
-    }*/
+
 
     override fun onSupportNavigateUp(): Boolean {
         return nav_host_fragment.navigateUp()

@@ -14,10 +14,10 @@ class SplashViewModel : ViewModel() {
     init {
         GlobalScope.launch {
             delay(3000)
-            mutableLiveData.postValue(SplashState.MainActivity)
+            mutableLiveData.postValue(SplashState.MainActivity())
         }
     }
 }
 sealed class SplashState {
-    object MainActivity : SplashState()
+    class MainActivity : SplashState()
 }

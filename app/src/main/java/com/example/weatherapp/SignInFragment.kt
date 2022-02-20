@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
+import com.example.weatherapp.Database.SharePref
 import com.example.weatherapp.Database.UserManager
 import com.example.weatherapp.databinding.FragmentSignInBinding
 import com.example.weatherapp.model.LoginUser
@@ -24,7 +25,7 @@ class SignInFragment : Fragment() {
     private var loginViewModel: SignInViewModel? = null
 
     lateinit var binding: FragmentSignInBinding
-    lateinit var userManager: UserManager
+    lateinit var sharePref: SharePref
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentSignInBinding.inflate(inflater!!, container, false)
@@ -32,7 +33,8 @@ class SignInFragment : Fragment() {
        loginViewModel = ViewModelProviders.of(this)[SignInViewModel::class.java]
 
        binding.signInViewModel = loginViewModel
-
+        sharePref = SharePref.instance!!;
+        sharePref.setContext(context!!);
 
        loginViewModel!!.user!!.observe(this
        ) { loginUser ->
@@ -52,12 +54,13 @@ class SignInFragment : Fragment() {
                && binding.txtPassword.text.toString() == "Test@123456"
            ) {
 
-               userManager = UserManager(context!!)
+               /*userManager = UserManager(context!!)
                GlobalScope.launch {
                    userManager.storeUser(binding.txtEmailAddress.text.toString())
                    Log.e("isloged1:", binding.txtEmailAddress.text.toString())
 
-               }
+               }*/
+               sharePref.setUser("logged in")
                findNavController().navigate(R.id.action_signInFragment_to_userListFragment2)
 
            } else {
