@@ -12,6 +12,7 @@ import com.example.weatherapp.databinding.ActivityMainBinding
 
 
 class MainActivity : AppCompatActivity() {
+    //hello world
     private lateinit var binding: ActivityMainBinding
     private lateinit var nav_host_fragment:NavController
     override fun onCreate(savedInstanceState: Bundle?) {
